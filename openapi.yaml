@@ -24,6 +24,24 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/getTodosResponse"
+    /todos/getCartItems/{username}:
+    get:
+      operationId: getCartItems
+      summary: Get the list of cart items
+      parameters:
+        - in: path
+          name: username
+          schema:
+            type: string
+          required: true
+          description: The name of the user.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getCartItemsResponse"
     post:
       operationId: addTodo
       summary: Add a todo to the list

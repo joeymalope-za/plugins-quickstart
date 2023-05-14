@@ -30,6 +30,51 @@ async def delete_todo(username):
         _TODOS[username].pop(todo_idx)
     return quart.Response(response='OK', status=200)
 
+@app.get("/todos/getCartItems/<string:username>")
+async def get_cart_items(username):
+    return quart.Response(response=json.dumps(_TODOS.get(username, [
+        {
+            "id": 4809281732672,
+            "title": "South Park Towelie Ugly Holiday Sweater",
+            "price": "64.95",
+            "currency_code": "USD",
+            "description": null,
+            "url": "https://www.southparkshop.com/products/south-park-towelie-ugly-holiday-sweater"
+        },
+        {
+            "id": 6566410944564,
+            "title": "South Park Towelie Ugly Holiday Sweater",
+            "price": "51.95",
+            "currency_code": "GBP",
+            "description": null,
+            "url": "https://southparkshop.co.uk/products/south-park"
+        },
+        {
+            "id": 6632357953600,
+            "title": "South Park 2 For 1 Hugs Crewneck Sweatshirt",
+            "price": "36.95",
+            "currency_code": "USD",
+            "description": null,
+            "url": "https://www.southparkshop.com/products/south-park-2-for-1-hugs-crewneck-sweatshirt"
+        },
+        {
+            "id": 4377994330176,
+            "title": "South Park Cartman Bad Kitty Fleece Hooded Sweatshirt",
+            "price": "39.95",
+            "currency_code": "USD",
+            "description": null,
+            "url": "https://www.southparkshop.com/products/south-park-cartman-bad-kitty-fleece-hooded-sweatshirt"
+        },
+        {
+            "id": 4813556547648,
+            "title": "South Park Merry Christmas Holiday Fleece Crewneck Sweatshirt",
+            "price": "36.95",
+            "currency_code": "USD",
+            "description": null,
+            "url": "https://www.southparkshop.com/products/south-park-merry-christmas-holiday-fleece-crewneck-sweatshirt"
+        },
+    ])), status=200)
+
 @app.get("/logo.png")
 async def plugin_logo():
     filename = 'logo.png'
