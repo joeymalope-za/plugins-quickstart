@@ -38,7 +38,6 @@ async def get_cart_items(username):
             "title": "South Park Towelie Ugly Holiday Sweater",
             "price": "64.95",
             "currency_code": "USD",
-            "description": null,
             "url": "https://www.southparkshop.com/products/south-park-towelie-ugly-holiday-sweater"
         },
         {
@@ -46,7 +45,6 @@ async def get_cart_items(username):
             "title": "South Park Towelie Ugly Holiday Sweater",
             "price": "51.95",
             "currency_code": "GBP",
-            "description": null,
             "url": "https://southparkshop.co.uk/products/south-park"
         },
         {
@@ -54,7 +52,6 @@ async def get_cart_items(username):
             "title": "South Park 2 For 1 Hugs Crewneck Sweatshirt",
             "price": "36.95",
             "currency_code": "USD",
-            "description": null,
             "url": "https://www.southparkshop.com/products/south-park-2-for-1-hugs-crewneck-sweatshirt"
         },
         {
@@ -62,7 +59,6 @@ async def get_cart_items(username):
             "title": "South Park Cartman Bad Kitty Fleece Hooded Sweatshirt",
             "price": "39.95",
             "currency_code": "USD",
-            "description": null,
             "url": "https://www.southparkshop.com/products/south-park-cartman-bad-kitty-fleece-hooded-sweatshirt"
         },
         {
@@ -70,7 +66,6 @@ async def get_cart_items(username):
             "title": "South Park Merry Christmas Holiday Fleece Crewneck Sweatshirt",
             "price": "36.95",
             "currency_code": "USD",
-            "description": null,
             "url": "https://www.southparkshop.com/products/south-park-merry-christmas-holiday-fleece-crewneck-sweatshirt"
         },
     ])), status=200)
