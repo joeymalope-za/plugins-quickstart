@@ -11,7 +11,7 @@
     "authorization_url": "https://dev.macaroni.ink/auth/oauth_exchange",
     "authorization_content_type": "application/json",
     "verification_tokens": {
-      "openai": "Replace_this_string_with_the_verification_token_generated_in_the_ChatGPT_UI"
+      "openai": "e6c32fa4beca40acb0fdbc9d51a570a0"
     }
   },
   "api": {
