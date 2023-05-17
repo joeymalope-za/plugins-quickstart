@@ -109,7 +109,7 @@ async def oauth():
 OPENAI_CLIENT_ID = "org-BpdJjNRC40leioOZo9UJ8TFa"
 OPENAI_CLIENT_SECRET = "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"
 OPENAI_CODE = "abc123"
-OPENAI_TOKEN = "b75a4e7c5e974a809871a3ade5adf955"
+OPENAI_TOKEN = "e6c32fa4beca40acb0fdbc9d51a570a0"
 
 @app.post("/auth/oauth_exchange")
 async def oauth_exchange():
