@@ -4,7 +4,7 @@ import quart
 import quart_cors
 from quart import request
 
-app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.com")
+app = quart_cors.cors(quart.Quart(__name__), allow_origin="*")
 
 # Keep track of todo's. Does not persist if Python session is restarted.
 _TODOS = {}
@@ -88,6 +88,46 @@ async def openapi_spec():
     with open("openapi.yaml") as f:
         text = f.read()
         return quart.Response(text, mimetype="text/yaml")
+
+@app.get("/oauth")
+async def oauth():
+    query_string = request.query_string.decode('utf-8')
+    parts = query_string.split('&')
+    kvps = {}
+    for part in parts:
+        k, v = part.split('=')
+        v = v.replace("%2F", "/").replace("%3A", ":")
+        kvps[k] = v
+    print("OAuth key value pairs from the ChatGPT Request: ", kvps)
+    url = kvps["redirect_uri"] + f"?code={OPENAI_CODE}"
+    print("URL: ", url)
+    return quart.Response(
+        f'<a href="{url}">Click to authorize</a>'
+    )
+
+# Sample names
+OPENAI_CLIENT_ID = "org-BpdJjNRC40leioOZo9UJ8TFa"
+OPENAI_CLIENT_SECRET = "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"
+OPENAI_CODE = "abc123"
+OPENAI_TOKEN = "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"
+
+@app.post("/auth/oauth_exchange")
+async def oauth_exchange():
+    request = await quart.request.get_json(force=True)
+    print(f"oauth_exchange {request=}")
+
+    if request["client_id"] != OPENAI_CLIENT_ID:
+        raise RuntimeError("bad client ID")
+    if request["client_secret"] != OPENAI_CLIENT_SECRET:
+        raise RuntimeError("bad client secret")
+    if request["code"] != OPENAI_CODE:
+        raise RuntimeError("bad code")
+
+    return {
+        "access_token": OPENAI_TOKEN,
+        "token_type": "bearer"
+    }
+
 
 def main():
     app.run(debug=True, host="0.0.0.0", port=5003)
