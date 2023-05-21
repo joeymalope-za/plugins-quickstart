@@ -6,7 +6,7 @@
   "description_for_model": "Plugin for managing a TODO list, you can add, remove and view your TODOs.",
   "auth": {
     "type": "oauth",
-    "client_url": "https://dev.macaroni.ink/oauth",
+    "client_url": "https://savetonotion.macaroni.ink/oauth",
     "scope": "",
     "authorization_url": "https://dev.macaroni.ink/auth/oauth_exchange",
     "authorization_content_type": "application/json",
