@@ -11,7 +11,7 @@
     "authorization_url": "https://dev.macaroni.ink/auth/oauth_exchange",
     "authorization_content_type": "application/json",
     "verification_tokens": {
-      "openai": "e6c32fa4beca40acb0fdbc9d51a570a0"
+      "openai": "132e53505cfa49678d7b94f9fefe026e"
     }
   },
   "api": {
